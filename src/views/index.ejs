@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to the Memory Game</title>
+    <style>
+        body{
+            background-image: url('/public/images/background.gif');
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+        h1{
+            font-size: 40px;
+            font-weight: 900;
+            color:rgb(1, 23, 29);
+            cursor: pointer;
+        }
+        .items{
+            width:100%;
+            height: 96vh;
+            display:  flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        input,select{
+            outline:none;
+            width:300px;
+            height:40px;
+            border-radius: 5px;
+            border:none;
+            margin: 1% 0;
+        }
+        button{
+            width:200px;
+            height: 40px;
+            background-color: aqua;
+            border:none;
+            border-radius: 5px;
+            cursor: pointer;
+            color:black;
+            font-size: 20px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="items">
+        <h1>Welcome to the Poke Game!</h1>
+        <input type="text" placeholder="Enter your name" id="name"/>
+        <select id="level">
+            <option value="easy">Easy</option>
+            <option value="normal">Normal</option>
+            <option value="hard">Hard</option>
+        </select>
+        <button onclick="handleClick()">Start Game</button>
+    </div>
+    <script>
+        const handleClick = () => {
+            let value = document.getElementById('name').value
+            let levels = document.getElementById('level').value
+            if(value.length!==0){
+                window.location.href=`/game/${value}/${levels}`
+            }else{
+                alert('Enter your name')
+            }
+        }
+    </script>
+</body>
+</html>

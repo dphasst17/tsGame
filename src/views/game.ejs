@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game</title>
+    <style>
+        body{
+            background-image: url('/public/images/meme1.jpg');
+            background-size: auto;
+            background-repeat: repeat-x;
+            padding:0;
+            margin:0;
+        }
+        .overlay{
+            width:100%;
+            height:100%;
+            position: absolute;
+            z-index: 10;
+            background-color: aliceblue;
+            opacity: 0.6;
+        }
+        #game-board{
+            width:auto;
+            min-width: 60%;
+            max-width: 90%;
+            height:100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            z-index: 20;
+            margin:auto
+        }
+        .card_img{
+            z-index: 20;
+            margin:6px;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            opacity: 1;
+            border:solid 1px black;
+            border-radius:10px;
+            transition: all .1s linear;
+            background-color: aliceblue;
+        }
+        .info{
+            width:100%;
+            height:100px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 40;
+        }
+        #name,#point,#maxPoint,#level{
+            color:rgb(255, 255, 255);
+            font-size:30px;
+            font-weight: 700;
+            background-color: rgb(11, 53, 107);
+            margin:0 4px;
+            padding:0 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="info">
+        <div id="name"></div>
+        <div id="point"></div>
+        <div id="maxPoint"><%- board.length/2 %></div>
+        <div id="level">Level: <%- level %></div>
+    </div>
+    <div id="game-board">
+        <% for(let i = 0; i < board.length; i++) { %>
+            <div id="card" class="card_img"><img src="<%= board[i] %>" class="card" id="card<%= i %>"></div>
+        <% } %>
+    </div>
+
+    <script src="/game.js"></script>
+</body>
+</html>

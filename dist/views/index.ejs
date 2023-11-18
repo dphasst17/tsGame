@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to the Memory Game</title>
+    <style>
+        p{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Memory Game!</h1>
+    <p>Click the button below to start a new game.</p>
+    <input type="text" placeholder="Enter your name" id="name"/>
+    <button onclick="handleClick()">Start Game</button>
+    <script>
+        const handleClick = () => {
+            let value = document.getElementById('name').value
+            console.log(value)
+        }
+    </script>
+</body>
+</html>
