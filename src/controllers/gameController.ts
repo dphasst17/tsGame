@@ -31,7 +31,7 @@ export class GameController {
                 break;
             }
             case 'hard':{
-                limit = '18'
+                limit = '20'
                 break;
             }
         }

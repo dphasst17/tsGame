@@ -41,7 +41,7 @@
             border:solid 1px black;
             border-radius:10px;
             transition: all .1s linear;
-            background-color: aliceblue;
+            background-color: rgb(254, 255, 255);
         }
         .info{
             width:100%;
@@ -52,7 +52,7 @@
             align-items: center;
             z-index: 40;
         }
-        #name,#point,#maxPoint,#level{
+        #name,#point,#maxPoint,#level,#timer{
             color:rgb(255, 255, 255);
             font-size:30px;
             font-weight: 700;
@@ -61,6 +61,12 @@
             padding:0 20px;
             border-radius: 5px;
             cursor: pointer;
+        }
+        .overlayCard{ 
+            background-color: rgb(255, 255, 255);
+            z-index: 30;
+            border-radius: 5%;
+            pointer-events: none;
         }
     </style>
 </head>
@@ -71,10 +77,14 @@
         <div id="point"></div>
         <div id="maxPoint"><%- board.length/2 %></div>
         <div id="level">Level: <%- level %></div>
+        <div id="timer"></div>
     </div>
     <div id="game-board">
         <% for(let i = 0; i < board.length; i++) { %>
-            <div id="card" class="card_img"><img src="<%= board[i] %>" class="card" id="card<%= i %>"></div>
+            <div id="card" class="card_img">
+                <div id="overlay-<%= i %>" class="overlayCard"></div>
+                <img src="<%= board[i] %>" class="card" id="<%= i %>">
+            </div>
         <% } %>
     </div>
 
