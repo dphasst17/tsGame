@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node-dev src/index.ts",
+    "start": "node ./dist/index.js",
     "build": "tsc && copyfiles -u 1 src/views/*.ejs dist"
 
   },
